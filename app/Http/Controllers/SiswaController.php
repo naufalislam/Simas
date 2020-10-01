@@ -7,10 +7,14 @@ use Illuminate\Support\Facades\Redis;
 
 class SiswaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data_siswa = \App\Models\Siswa::all();
-        return view('siswa.index',['data_siswa' => $data_siswa]);
+        if ($request->has('cari')) {
+            $data_siswa = \App\Models\Siswa::where('nama','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $data_siswa = \App\Models\Siswa::all();
+        }
+        return view('siswa.index',['data_siswa' => $data_siswa]); 
     }
     
     public function create(Request $request)

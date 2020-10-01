@@ -9,14 +9,27 @@
             @endif
         <div class="row">
             <div class="col-6">
+                <br>
                 <h1>Data Siswa</h1>
             </div>
+
             <div class="col-6">
+                <br>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-               Tambah Data Siswa
+                    Tambah Data Siswa
                 </button>
             </div>
+
+            <div class="col-12">
+            <form class="form-inline my-2 my-lg-0 float-right" method="GET" action="/siswa">
+            <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+
+            <div class="col-12 float-center">
+            <br>
             <table class="table table-hover table-dark">
                 <tr>
                     <td>Nama</td>
@@ -38,6 +51,7 @@
                 </tr>
                 @endforeach
             </table>
+            </div>
         </div>
         </div>
     </div>
